@@ -8,4 +8,4 @@ En este proyecto se implementara la creacion del componente Frontend de un e-com
 
 ## Descripción
 
-El proyecto Tinto Expres! busca  crear un e-commerce basado en la venta a domicilio de cafe de diferentes tipos, la venta de su propia marca de cafe elaborado con productores nacionales. 
+El proyecto Tinto Expres! busca  crear un e-commerce basado en la venta a domicilio de cafe de diferentes tipos y la venta de su propia marca de cafe elaborado con productores nacionales. 
