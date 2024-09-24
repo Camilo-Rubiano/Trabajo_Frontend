@@ -1,0 +1,11 @@
+[build]
+  command = "ng build --configuration production"
+  publish = "dist/tu-proyecto"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
