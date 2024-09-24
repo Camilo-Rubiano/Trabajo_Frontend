@@ -1,5 +1,5 @@
 [build]
-  command = "ng build --configuration production"
+  command = "npm install -g @angular/cli && ng build --configuration production"
   publish = "tintoexpres/dist/tintoexpres/browser"
 
 [build.environment]
