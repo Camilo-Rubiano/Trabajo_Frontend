@@ -1,1 +1,44 @@
-<p>registro works!</p>
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="card p-5 shadow-lg" style="width: 500px; background-color: #f3f3f3;">
+        <h2 class="text-center mb-4" style="color: #001846;">Registrar</h2>
+        <!-- Sección del Formulario Registrar -->
+        <form class="row g-3">
+            <div class="col-6">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control form-control-lg" id="nombre" placeholder="Nombre">
+            </div>
+            <div class="col-6">
+                <label for="apellido" class="form-label">Apellido</label>
+                <input type="text" class="form-control form-control-lg" id="apellido" placeholder="Apellido">
+            </div>
+            <div class="col-12">
+                <label for="pais" class="form-label">País</label>
+                <select id="pais" class="form-select form-select-lg">
+                    <option selected disabled>País</option>
+                    <option>Colombia</option>
+                    <option>Argentina</option>
+                    <option>Mexico</option>
+                </select>
+            </div>
+            <div class="col-6">
+                <label for="correo" class="form-label">Correo</label>
+                <input type="email" class="form-control form-control-lg" id="correo" placeholder="Correo">
+            </div>
+            <div class="col-6">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input type="tel" class="form-control form-control-lg" id="telefono" placeholder="Teléfono">
+            </div>
+            <div class="col-6">
+                <label for="contrasena" class="form-label">Contraseña</label>
+                <input type="password" class="form-control form-control-lg" id="contrasena" placeholder="Contraseña">
+            </div>
+            <div class="col-6">
+                <label for="confirmarContrasena" class="form-label">Confirmar contraseña</label>
+                <input type="password" class="form-control form-control-lg" id="confirmarContrasena" placeholder="Confirmar contraseña">
+            </div>
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-warning w-100 btn-lg" style="background-color: #f26f3e; color: white;">Crear</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 @Component({
   selector: 'app-domicilio',
   standalone: true,
@@ -8,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './domicilio.component.css'
 })
 export class DomicilioComponent {
+
 
 }
