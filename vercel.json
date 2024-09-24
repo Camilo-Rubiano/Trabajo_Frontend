@@ -1,0 +1,14 @@
+{
+    "root": "tintoexpres",
+    "build": {
+      "env": {
+        "NODE_VERSION": "18"
+      }
+    },
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/index.html"
+      }
+    ]
+  }
