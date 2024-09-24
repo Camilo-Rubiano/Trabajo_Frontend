@@ -1,1 +1,82 @@
-<p>productos works!</p>
+<div class="container mt-4">
+    <div class="row g-3">
+        <!-- Producto 1 -->
+        <div class="col-6 col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="images/cumbre.jpeg" alt="Café Cumbre Colombiana" (click)="openModal('0', productModal)">
+                <div class="card-body">
+                    <h5 class="card-title">Café Cumbre Colombiana</h5>
+                </div>
+            </div>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="col-6 col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="images/profundo.jpeg" alt="Café Oceano Profundo" (click)="openModal('1', productModal)">
+                <div class="card-body">
+                    <h5 class="card-title">Café Oceano Profundo</h5>
+                </div>
+            </div>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="col-6 col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="images/altura.jpeg" alt="Café Nube de Altura" (click)="openModal('2', productModal)">
+                <div class="card-body">
+                    <h5 class="card-title">Café Nube de Altura</h5>
+                </div>
+            </div>
+        </div>
+
+        <!-- Producto 4 -->
+        <div class="col-6 col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="images/purpura.jpeg" alt="Café Aurora Púrpura" (click)="openModal('3', productModal)">
+                <div class="card-body">
+                    <h5 class="card-title">Café Aurora Púrpura</h5>
+                </div>
+            </div>
+        </div>
+
+        <!-- Producto 5 -->
+        <div class="col-6 col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="images/nocturna.jpeg" alt="Café Cosecha Nocturna" (click)="openModal('4', productModal)">
+                <div class="card-body">
+                    <h5 class="card-title">Café Cosecha Nocturna</h5>
+                </div>
+            </div>
+        </div>
+
+        <!-- Producto 6 -->
+        <div class="col-6 col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="images/dorado.jpeg" alt="Café Sol Dorado" (click)="openModal('5', productModal)">
+                <div class="card-body">
+                    <h5 class="card-title">Café Sol Dorado</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<ng-template #productModal let-modal>
+    <div class="modal-header">
+        <h5 class="modal-title">{{productoSeleccionado?.titulo}}</h5>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <img [src]="productoSeleccionado?.imagen" class="img-fluid mb-3" alt="Imagen de producto">
+        <p><strong>Descripción:</strong> {{productoSeleccionado?.descripcion}}</p>
+        <p><strong>Aroma:</strong> {{productoSeleccionado?.aroma}}</p>
+        <p><strong>Sabor:</strong> {{productoSeleccionado?.sabor}}</p>
+        <p><strong>Componentes:</strong> {{productoSeleccionado?.componentes}}</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Cerrar</button>
+        <button type="button" class="btn custom-button">Comprar</button>
+    </div>
+</ng-template>

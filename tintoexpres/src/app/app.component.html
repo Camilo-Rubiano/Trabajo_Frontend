@@ -1,14 +1,58 @@
-<header>
-  <h1>Tinto Expres - A la velocidad de tu día</h1>
-  <nav>
-    <a routerLink="/">Inicio</a>
-    <a routerLink="domicilio">Tinto a domicilio</a>
-    <a routerLink="productos">Nuestros productos</a>
-    <a routerLink="contacto">Contacto</a>
-    <a routerLink="registro">Regístrate</a>
-  </nav>
-</header>
-<router-outlet />
+<nav class="navbar navbar-expand-lg" style="background-color: #727272; padding: 10px 0;">
+  <div class="container-fluid">
+    <!-- Marca a la izquierda -->
+    <a class="navbar-brand" routerLink="/" style="font-size: 1.2rem; font-weight: bold;">
+      Tinto Expres! <br>A la velocidad de tu día.
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <!-- Menú -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="domicilio">Tinto a domicilio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="productos">Nuestros productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="contacto">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="registro">
+            <button type="button" class="btn custom-button">Regístrate</button>
+          </a>
+        </li>
+        <li class="nav-item d-flex align-items-center">
+          <a class="nav-link" routerLink="registro">
+            <img src="images/iconoUsuario.png" style="width: 30px;" alt="iconoUsuario">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- router -->
+<main class="container-fluid d-flex flex-column" style="flex: 1;">
+  <router-outlet></router-outlet>
+</main>
+
+<!-- Footer -->
 <footer>
-  <p>&copy; 2024 Tinto Expres! Todos los derechos reservados.</p>
+  <img src="images/Logo.png" class="footer-logo" alt="Logo Tinto Expres">
+  <div class="footer-content">
+    <p>&copy; 2024 Tinto Expres! Todos los derechos reservados.</p>
+  </div>
+  <div class="social-icons">
+    <a href="#"><img src="images/Facebook.png" alt="Facebook"></a>
+    <a href="#"><img src="images/Instagram.png" alt="Instagram"></a>
+    <a href="#"><img src="images/Twitter.png" alt="Twitter"></a>
+  </div>
 </footer>

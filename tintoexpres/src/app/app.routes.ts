@@ -6,24 +6,10 @@ import {RegistroComponent} from './registro/registro.component';
 import {DomicilioComponent} from './domicilio/domicilio.component';
 
 export const routes: Routes = [
-    {
-        path: '',
-        component: HomeComponent
-    },
-    {
-        path: 'domicilio',
-        component: DomicilioComponent
-    },
-    {
-        path: 'productos',
-        component: ProductosComponent
-    },
-    {
-        path: 'registro',
-        component: RegistroComponent
-    },
-    {
-        path: 'contacto',
-        component: ContactoComponent
-    }
+    { path: '', component: HomeComponent },
+    { path: 'domicilio', component: DomicilioComponent} ,
+    { path: 'productos', component: ProductosComponent },
+    { path: 'registro', component: RegistroComponent },
+    { path: 'contacto', component: ContactoComponent },
+    { path: '**',redirectTo: '',pathMatch: 'full' }
 ];
