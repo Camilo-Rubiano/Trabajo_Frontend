@@ -1,0 +1,21 @@
+.access-denied-container {
+    text-align: center;
+    margin-top: 100px;
+  }
+  
+  .access-denied-container h1 {
+    font-size: 2.5rem;
+    color: #dc3545; /* Rojo para resaltar el mensaje de acceso denegado */
+  }
+  
+  .access-denied-container p {
+    margin-top: 20px;
+    font-size: 1.2rem;
+  }
+  
+  .access-denied-container a {
+    margin-top: 30px;
+    display: inline-block;
+  }
+  
+  

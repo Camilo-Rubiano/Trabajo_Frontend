@@ -1,44 +1,118 @@
-<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
     <div class="card p-5 shadow-lg" style="width: 500px; background-color: #f3f3f3;">
         <h2 class="text-center mb-4" style="color: #001846;">Registrar</h2>
         <!-- Sección del Formulario Registrar -->
-        <form class="row g-3">
+        <form [formGroup]="registroForm" (ngSubmit)="onSubmit()" class="row g-3">
             <div class="col-6">
                 <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control form-control-lg" id="nombre" placeholder="Nombre">
+                <input type="text" class="form-control form-control-lg" id="nombre" formControlName="nombre"
+                    placeholder="Nombre">
+                <div *ngIf="registroForm.get('nombre')!.invalid && registroForm.get('nombre')!.touched"
+                    class="text-danger">
+                    El nombre es requerido
+                </div>
             </div>
             <div class="col-6">
                 <label for="apellido" class="form-label">Apellido</label>
-                <input type="text" class="form-control form-control-lg" id="apellido" placeholder="Apellido">
+                <input type="text" class="form-control form-control-lg" id="apellido" formControlName="apellido"
+                    placeholder="Apellido">
+                <div *ngIf="registroForm.get('apellido')!.invalid && registroForm.get('apellido')!.touched"
+                    class="text-danger">
+                    El apellido es requerido
+                </div>
             </div>
             <div class="col-12">
                 <label for="pais" class="form-label">País</label>
-                <select id="pais" class="form-select form-select-lg">
+                <select id="pais" class="form-select form-select-lg" formControlName="pais">
                     <option selected disabled>País</option>
                     <option>Colombia</option>
                     <option>Argentina</option>
                     <option>Mexico</option>
                 </select>
+                <div *ngIf="registroForm.get('pais')!.invalid && registroForm.get('pais')!.touched" class="text-danger">
+                    El país es requerido
+                </div>
             </div>
             <div class="col-6">
                 <label for="correo" class="form-label">Correo</label>
-                <input type="email" class="form-control form-control-lg" id="correo" placeholder="Correo">
+                <input type="email" class="form-control form-control-lg" id="correo" formControlName="correo"
+                    placeholder="Correo">
+                <div *ngIf="registroForm.get('correo')!.invalid && registroForm.get('correo')!.touched"
+                    class="text-danger">
+                    El correo es inválido
+                </div>
             </div>
             <div class="col-6">
                 <label for="telefono" class="form-label">Teléfono</label>
-                <input type="tel" class="form-control form-control-lg" id="telefono" placeholder="Teléfono">
+                <input type="tel" class="form-control form-control-lg" id="telefono" formControlName="telefono"
+                    placeholder="Teléfono">
+                <div *ngIf="registroForm.get('telefono')!.invalid && registroForm.get('telefono')!.touched"
+                    class="text-danger">
+                    El teléfono es requerido
+                </div>
             </div>
             <div class="col-6">
                 <label for="contrasena" class="form-label">Contraseña</label>
-                <input type="password" class="form-control form-control-lg" id="contrasena" placeholder="Contraseña">
+                <input type="password" class="form-control form-control-lg" id="contrasena" formControlName="contrasena"
+                    placeholder="Contraseña">
+                <div *ngIf="registroForm.get('contrasena')!.invalid && registroForm.get('contrasena')!.touched"
+                    class="text-danger">
+                    La contraseña es requerida y debe tener al menos 6 caracteres
+                </div>
             </div>
             <div class="col-6">
                 <label for="confirmarContrasena" class="form-label">Confirmar contraseña</label>
-                <input type="password" class="form-control form-control-lg" id="confirmarContrasena" placeholder="Confirmar contraseña">
+                <input type="password" class="form-control form-control-lg" id="confirmarContrasena"
+                    formControlName="confirmarContrasena" placeholder="Confirmar contraseña">
+                <div *ngIf="registroForm.get('confirmarContrasena')!.touched && registroForm.hasError('mismatch')"
+                    class="text-danger">
+                    Las contraseñas no coinciden
+                </div>
+            </div>
+            <div class="col-12">
+                <label for="rol" class="form-label">Rol</label>
+                <select id="rol" class="form-select form-select-lg" formControlName="rol">
+                    <option selected disabled>Seleccione el rol</option>
+                    <option value="admin">Administrador</option>
+                    <option value="user">Usuario</option>
+                </select>
+                <div *ngIf="registroForm.get('rol')!.invalid && registroForm.get('rol')!.touched" class="text-danger">
+                    El rol es requerido
+                </div>
             </div>
             <div class="col-12 text-center">
-                <button type="submit" class="btn btn-warning w-100 btn-lg" style="background-color: #f26f3e; color: white;">Crear</button>
+                <button type="submit" class="btn btn-warning w-100 btn-lg" [disabled]="!registroForm.valid"
+                    style="background-color: #f26f3e; color: white;">
+                    Crear
+                </button>
             </div>
         </form>
     </div>
 </div>
+
+<!-- Modal para error de validación -->
+<ng-template #yaRegistrado let-modal>
+    <div class="modal-header">
+        <h5 class="modal-title">Usuario registrado</h5>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <p>El correo ya está registrado.</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Cerrar</button>
+    </div>
+</ng-template>
+
+
+<!-- Toast de notificación personalizado -->
+<div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1055;">
+    <div class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true" #toastElement>
+      <div class="d-flex">
+        <div class="toast-body">
+          <i class="bi bi-check-circle me-2"></i> Usuario creado exitosamente.
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>

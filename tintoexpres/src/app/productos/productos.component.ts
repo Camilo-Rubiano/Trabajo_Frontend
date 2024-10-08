@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef} from '@angular/core';
 import { NgbModal, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
-import { importProvidersFrom } from '@angular/core';
-
+import { Router } from '@angular/router';
+declare var bootstrap: any;
 @Component({
   selector: 'app-productos',
   standalone: true,
@@ -9,8 +9,32 @@ import { importProvidersFrom } from '@angular/core';
   templateUrl: './productos.component.html',
   styleUrl: './productos.component.css'
 })
-export class ProductosComponent {
+export class ProductosComponent  implements OnInit {
+  constructor(private modalService: NgbModal, private router: Router) {}
+  @ViewChild('toastElement', { static: true }) toastElement!: ElementRef;
+  toastInstance: any;
   productoSeleccionado: any;
+
+  ngOnInit() {
+   // Verificar si hay un estado de registro exitoso en localStorage
+    const registroExitoso = localStorage.getItem('registroExitoso');
+
+    if (registroExitoso === 'true') {
+    // Inicializar el toast
+      this.toastInstance = new bootstrap.Toast(this.toastElement.nativeElement);
+    // Mostrar el toast
+      this.mostrarToast();
+    
+    // Limpiar el estado de registro exitoso en localStorage para que no se muestre de nuevo
+      localStorage.removeItem('registroExitoso');
+    }
+  }
+
+  mostrarToast() {
+    if (this.toastInstance) {
+      this.toastInstance.show();
+    }
+  }
 
   productos = [
     {
@@ -69,9 +93,7 @@ export class ProductosComponent {
     }
   ];
 
-  constructor(private modalService: NgbModal) {}
   openModal(productoId: string, content: any) {
-    debugger;
     this.productoSeleccionado = this.productos.find(producto => producto.id === productoId);
     this.modalService.open(content);
   }

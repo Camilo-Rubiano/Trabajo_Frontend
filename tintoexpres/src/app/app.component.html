@@ -24,14 +24,24 @@
           <a class="nav-link" routerLink="contacto">Contacto</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" routerLink="mensajes">Mensajes</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" routerLink="registro">
             <button type="button" class="btn custom-button">Regístrate</button>
           </a>
         </li>
-        <li class="nav-item d-flex align-items-center">
-          <a class="nav-link" routerLink="registro">
+        <li class="nav-item dropdown d-flex align-items-center">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="images/iconoUsuario.png" style="width: 30px;" alt="iconoUsuario">
           </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#" (click)="abrirModal(loginModal)">Ingresar</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" routerLink="perfil">Ver Perfil</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#" (click)="cerrarSesion()">Cerrar sesión</a></li>
+          </ul>
         </li>
       </ul>
     </div>
@@ -56,3 +66,35 @@
     <a href="#"><img src="images/Twitter.png" alt="Twitter"></a>
   </div>
 </footer>
+
+<!-- Modal de inicio de sesión -->
+<ng-template #loginModal>
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Iniciar sesión</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="cerrarModal()"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="loginCorreo" class="form-label">Correo electrónico</label>
+              <input type="email" class="form-control" id="loginCorreo" name="correo" [(ngModel)]="correo" placeholder="Ingresa tu correo">
+            </div>
+            <div class="mb-3">
+              <label for="loginContrasena" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="loginContrasena" name="contrasena" [(ngModel)]="contrasena" placeholder="Ingresa tu contraseña">
+            </div>
+            <div *ngIf="mensajeError" class="text-danger mb-3">{{ mensajeError }}</div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary customn-button"  data-bs-dismiss="modal"  (click)="cerrarModal()">Cancelar</button>
+          <button type="button" class="btn btn-primary customn-button" (click)="verificarUsuario()">Iniciar sesión</button>
+          <button *ngIf="mostrarRegistro" type="button" class="btn custom-button" (click)="redirigirRegistro()">Registrarse</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

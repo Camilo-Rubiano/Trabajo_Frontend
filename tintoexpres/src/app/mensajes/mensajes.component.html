@@ -1,0 +1,30 @@
+<div class="container mt-4">
+    <h2>Mensajes Guardados</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Usuario</th>
+          <th>Teléfono</th>
+          <th>Correo</th>
+          <th>Mensaje</th>
+          <th>Acciones</th> <!-- Nueva columna para acciones -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let mensaje of mensajes; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ mensaje.nombre }}</td>
+          <td>{{ mensaje.telefono }}</td>
+          <td>{{ mensaje.correo }}</td>
+          <td>{{ mensaje.mensaje }}</td>
+          <td>
+            <button class="btn btn-danger btn-sm" (click)="eliminarMensaje(i)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="mensajes.length === 0" class="alert alert-warning">
+      No hay mensajes guardados.
+    </div>
+</div>

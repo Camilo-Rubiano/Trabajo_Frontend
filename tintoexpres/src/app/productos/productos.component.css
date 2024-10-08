@@ -8,3 +8,17 @@
 img {
     cursor: pointer;
 }
+.toast {
+    border-radius: 8px; /* Esquinas redondeadas */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    opacity: 0.95; /* Ligera transparencia */
+  }
+  
+  .toast .btn-close {
+    opacity: 0.7; /* Reducir opacidad del botón de cierre */
+  }
+  
+  .toast .btn-close:hover {
+    opacity: 1; /* Opacidad completa al pasar el mouse */
+  }
+  

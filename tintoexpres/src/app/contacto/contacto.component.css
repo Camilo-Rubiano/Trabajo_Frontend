@@ -3,8 +3,9 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
-.container {
+.contact-container {
     max-width: 1200px;
+    margin-top: 5rem; /* Ajuste de margen para dar espacio desde el navbar */
 }
 
 h2, h4 {
@@ -35,3 +36,26 @@ p {
 .btn:hover {
     background-color: #e05b2f;
 }
+.contact-container {
+    max-width: 1200px;
+    min-height: 80vh; /* Ocupa toda la altura de la pantalla */
+    display: flex;
+    align-items: center; /* Alinear al centro verticalmente */
+    justify-content: center; /* Alinear al centro horizontalmente */
+    padding: 2rem; /* Espaciado adicional alrededor del contenido */
+    margin-top: 0; /* Eliminar el margen superior */
+}
+.toast {
+    border-radius: 8px; /* Esquinas redondeadas */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    opacity: 0.95; /* Ligera transparencia */
+  }
+  
+  .toast .btn-close {
+    opacity: 0.7; /* Reducir opacidad del botón de cierre */
+  }
+  
+  .toast .btn-close:hover {
+    opacity: 1; /* Opacidad completa al pasar el mouse */
+  }
+  

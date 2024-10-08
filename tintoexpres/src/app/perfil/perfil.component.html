@@ -1,0 +1,29 @@
+<div class="container perfil-container d-flex justify-content-center align-items-center py-5">
+  <div class="card shadow-sm p-4" style="max-width: 600px; width: 100%;">
+    <div class="text-center mb-4">
+      <h1 class="perfil-titulo">Perfil</h1>
+    </div>
+    <div class="col-12">
+      <div class="perfil-dato">
+        <h4>Nombre:</h4>
+        <p>{{ datosSession.nombre || 'No disponible' }} {{ datosSession.apellido || '' }}</p>
+      </div>
+      <div class="perfil-dato">
+        <h4>Correo:</h4>
+        <p>{{ datosSession.correo || 'No disponible' }}</p>
+      </div>
+      <div class="perfil-dato">
+        <h4>Teléfono:</h4>
+        <p>{{ datosSession.telefono || 'No disponible' }}</p>
+      </div>
+      <div class="perfil-dato">
+        <h4>País:</h4>
+        <p>{{ datosSession.pais || 'No disponible' }}</p>
+      </div>
+      <div class="perfil-dato">
+        <h4>Rol:</h4>
+        <p>{{ datosSession.rol || 'No disponible' }}</p>
+      </div>
+    </div>
+  </div>
+</div>

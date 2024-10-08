@@ -1,0 +1,39 @@
+.perfil-container {
+  background-color: transparent; /* Fondo transparente para heredar el fondo lateral */
+  min-height: calc(100vh - 100px); /* Ajustar altura para que quede centrado más arriba */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2rem; /* Espacio superior ajustado para separación con el navbar */
+  padding-bottom: 2rem; /* Espacio inferior para evitar colapso */
+  position: relative;
+  top: -50px; /* Ajuste vertical para mover hacia arriba */
+}
+
+.card {
+  border-radius: 12px; /* Bordes redondeados */
+  background-color: #ffffff; /* Fondo blanco solo para la card */
+  border: none; /* Quitar borde si quieres un diseño más limpio */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Sombras ligeras para dar profundidad */
+}
+
+.perfil-titulo {
+  font-size: 2rem;
+  color: #007bff; /* Color azul de Bootstrap */
+  font-weight: bold;
+}
+
+.perfil-dato {
+  margin-bottom: 1.5rem;
+}
+
+.perfil-dato h4 {
+  margin: 0;
+  color: #343a40; /* Gris oscuro para títulos */
+}
+
+.perfil-dato p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #6c757d; /* Texto gris */
+}
