@@ -68,6 +68,12 @@ footer {
   background-color: #45a049;
 }
 
+.customn-button {
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
 .navbar-brand {
   font-weight: bold;
   font-size: 1.4rem;
@@ -94,3 +100,49 @@ footer {
 .navbar-nav .nav-item.d-flex {
   align-items: center;
 }
+
+.dropdown-menu {
+  min-width: 150px; /* Cambia este valor según el tamaño deseado */
+  background-color: #f3f3f3; /* Cambia este color al que prefieras */
+  border: 1px solid #ccc; /* Bordes del menú desplegable */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Agrega un sombreado suave */
+}
+
+/* Ajustar el color de los items en el dropdown */
+.dropdown-item {
+  color: #001846; /* Color del texto */
+  padding: 10px 20px; /* Ajusta el padding para que el menú sea más amplio */
+}
+
+/* Cambiar el color de fondo y texto cuando se pasa el mouse */
+.dropdown-item:hover {
+  background-color: #f26f3e; /* Color de fondo cuando se pasa el mouse */
+  color: #fff; /* Color del texto cuando se pasa el mouse */
+}
+
+/* Personalizar el separador */
+.dropdown-divider {
+  border-color: #ccc; /* Cambia el color del divisor */
+}
+
+.modal-dialog {
+  max-width: 500px; /* Ajusta este valor según tus necesidades */
+  margin: 1.75rem auto;
+}
+
+.modal-content {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.modal-backdrop {
+  z-index: 1040 !important;
+}
+
+.modal {
+  z-index: 1050 !important;
+  display: block !important;
+  opacity: 1;
+}
+

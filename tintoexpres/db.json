@@ -1,0 +1,42 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "nombre": "Jeisson",
+      "apellido": "Rubiano",
+      "pais": "Colombia",
+      "correo": "jeisson.rubianoa@gmail.com",
+      "telefono": "3194348737",
+      "contrasena": "000000",
+      "confirmarContrasena": "000000",
+      "role": "user"
+    },
+    {
+      "id": "2",
+      "nombre": "paola",
+      "apellido": "Rubiano",
+      "pais": "Colombia",
+      "correo": "pr@gmail.com",
+      "telefono": "3194348737",
+      "contrasena": "000000",
+      "confirmarContrasena": "000000",
+      "role": "user"
+    },
+    {
+      "id": "3",
+      "nombre": "camilo",
+      "apellido": "alvarado",
+      "pais": "Colombia",
+      "correo": "gg@gmail.com",
+      "telefono": "3194348737",
+      "contrasena": "000000",
+      "confirmarContrasena": "000000",
+      "role": "admin"
+    }
+  ],
+
+  "contactenos": [
+    {
+    }
+  ]
+}
